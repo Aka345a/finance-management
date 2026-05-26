@@ -1,7 +1,7 @@
-================================================================
+
   PERSONAL FINANCE MANAGEMENT SYSTEM
   AI-Powered Savings Prediction and Dashboard
-================================================================
+
 
 ABOUT
 -----
