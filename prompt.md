@@ -7,7 +7,6 @@ A single Python script that boots its own database, seeds five months of spendin
 Input Data
 The system seeds all data at runtime. No external files required.
 Expense Transactions (one per week per category, five months)
-
 user_id — demo Django user created at runtime
 expense_date — one transaction per week per category
 amount — base amount with small weekly variance
@@ -30,7 +29,6 @@ Triggers Z-score detection and appears in the alert output
 Output
 Two files written fresh on every run.
 financial_report.json
-
 user_id and username at the top level
 metrics block — current spending, budget limit, predicted savings, overspending flag, confidence score
 model block — algorithm name, MAE, MSE, R², CV R² (all 4 decimal places)
@@ -48,8 +46,8 @@ All values injected from the report dictionary only — never from the database
 
 
 System Requirements
-Pipeline Sequence (must run in this exact order)
 
+Pipeline Sequence (must run in this exact order)
 Bootstrap Django with in-memory database
 Create tables and seed five months of demo data
 Pull records into DataFrames and clean
@@ -136,11 +134,11 @@ No magic numbers — every threshold named or commented with its reasoning
 
 File Structure
 project/
-├── main.py                ← entire system
-├── requirements.txt       ← four pinned dependencies
-├── .gitignore
-├── financial_report.json  ← written on every run
-└── dashboard.html         ← written on every run
+ .main.py                ← entire system
+ .requirements.txt       ← four pinned dependencies
+ .gitignore
+ .financial_report.json  ← written on every run
+ .dashboard.html         ← written on every run
 
 Formatting Requirements
 
