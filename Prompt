@@ -3,16 +3,16 @@
 You will develop a Python application for a Personal Finance Management System that will enable people to keep track of their expenses and budgeting and predict their future savings.
 
 
-## **Context and Role**
+# **Context and Role**
 
- As a Python developer working on an AI-powered financial management application, my responsibility would be to design and develop a smart, scalable, and user-friendly system that helps users manage their finances effectively through intelligent expense tracking, budget management, and predictive analytics.
+As a Python developer working on an AI-powered financial management application, my responsibility would be to design and develop a smart, scalable, and user-friendly system that helps users manage their finances effectively.
 
 
-## **Objective**
+# **Objective**
 
 You will develop a Python application for a Personal Finance Management System that will enable people to keep track of their expenses and budgeting and predict their future savings.
 
-## **Input Data**
+# **Input Data**
  1. User Expense Records containing the following fields:
  • user id
  • date of expense
@@ -29,38 +29,38 @@ You will develop a Python application for a Personal Finance Management System t
  • budget limit
  • current spending
 
-## **Data Processing Requirements**
+# **Data Processing Requirements**
 • Clean and standardize all financial datasets provided by users
 • Consolidate expenditure and budget information using common identifiers like user_id and matching dates.
 • Address any missing or incomplete entries in the financial dataset appropriately.  
 • Create new feature variables, which include average daily expenses, total monthly expenditures, number of anomalies recently experienced, among others.
 
-## **Model Requirements**
+# **Model Requirements**
 • Develop at least two machine learning algorithms, for instance, Gradient Boosting Regressor and Linear Regression.
 • Train the algorithm for predicting savings estimates and future spending patterns.
 • Determine the efficiency of the models with the help of Mean Absolute Error , Mean Squared Error , and R² Score.
 
 
-## **Output Requirements**
+# **Output Requirements**
 • Generate a prioritized list of users flagged for overspending, including confidence or probability scores. 
 • Produce visualizations of key spending trends and savings prediction probabilities.
 • Export reports in JSON and HTML formats for easy sharing and archival.
 
-## **Error Handling and Documentation**
+# **Error Handling and Documentation**
 • Exception handling must be done to handle issues related to data inconsistencies, invalid formats, and other runtime issues.
  • Code must have modular structure along with proper separation of different modules like loading, preprocessing, feature extraction, modeling, evaluation, and output generation.
  • Code must include comments explaining modeling decisions, assumptions made, and limitation of model.
  • Usage of code must be included in script documentation.
 
 
-## **Performance and Scalability**
+# **Performance and Scalability**
 • Implement the system such that it is easily scalable and is able to accommodate many users. 
 • Handle the data efficiently by applying efficient querying and paging techniques using the Django ORM.
 • Make sure results are replicable by selecting the right random seeds. 
 • Construct the system such that other data sources can be added to it in the future.
 
 
-## **Tools and Libraries**
+# **Tools and Libraries**
 Install the following modules:
 • pandas and numpy for data analysis 
 • scikit-learn for building models and evaluation 
