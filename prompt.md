@@ -58,6 +58,12 @@ If any anomalous transactions were detected in the most recent month, the alert 
 
 The final output is a single dictionary containing the user's ID and name, all the key metrics, the list of alerts, and the chart data needed to draw the dashboard visualizations.
 
+#Error Handling and Defensive Programming
+
+The system must never crash silently or produce output that looks correct but isn't. Every failure must be loud, specific, and caught at the right layer. Apply these rules without exception throughout the entire pipeline:
+Never cast untrusted data directly to a number. Always route it through a safe conversion that replaces unparseable values with zero rather than raising an exception mid-pipeline. If the expense DataFrame comes back empty at any point after cleaning — not just before — raise a descriptive error immediately rather than letting the pipeline continue with nothing to work on. If predict() is called before train() has been run, raise a runtime error with a message that tells the caller exactly what they did wrong and what they need to do first. Every fallback path in the model selection logic must log a warning that names the fallback, explains why it was triggered, and states what the system will do instead — never fall back silently. Anomaly detection must handle the zero-standard-deviation edge case explicitly with a named floor constant rather than an inline magic number, and must log when it applies the floor so the behaviour is visible at runtime. If a budget record is missing for a given user-month combination, apply the 1.2× fallback and log which user and month triggered it — never apply the fallback silently as a default. If writing the JSON report or HTML dashboard to disk fails for any reason, catch the exception, log the full error, and re-raise it with a clear message so the caller knows the output files were not written. The overspending_flagged variable and the confidence score must both be fully computed and assigned before either is referenced anywhere else in the profile generator — reference-before-assignment is a runtime error that must be structurally impossible, not just avoided by convention.
+
+
 # Constraints (All Must Be Met)
 
 1. Single entry point.
